@@ -1,0 +1,18 @@
+glx: Only include compositeext.h if COMPOSITE is supported, see
+https://github.com/mirror/xserver/commit/d16133e3e293fe16b291114d344fbd5a61d5ed65#diff-de7913aeb274bc41716c0d9850d4996a
+
+Signed-off-by: Pierre Crokaert <pct@crookies.net>
+
+===================================================================
+--- xserver_xorg-server-1.19.6.orig/glx/glxscreens.c
++++ xserver_xorg-server-1.19.6/glx/glxscreens.c
+@@ -43,7 +43,9 @@
+ #include "glxutil.h"
+ #include "glxext.h"
+ #include "protocol-versions.h"
++#ifdef COMPOSITE
+ #include "compositeext.h"
++#endif
+ 
+ static DevPrivateKeyRec glxScreenPrivateKeyRec;
+ 
