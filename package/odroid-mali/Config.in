@@ -21,7 +21,7 @@ config BR2_PACKAGE_PROVIDES_LIBGLES
 endif
 
 config BR2_PACKAGE_ODROID_MALI_X11
-	bool
+	bool "odroid-mali-x11"
 	depends on BR2_aarch64 # No 32 bit version available
 	select BR2_PACKAGE_LIBDRM
 	select BR2_PACKAGE_XLIB_LIBX11
